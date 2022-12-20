@@ -13,7 +13,7 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
     <UserProfile>
       <ProfileHeader>
-        <ProfilePhoto src={avatar} alt="User avatar" className="avatar" />
+        <ProfilePhoto src={avatar} alt="User avatar" />
         <ProfileName>{username}</ProfileName>
         <ProfileText>@{tag}</ProfileText>
         <ProfileText>{location}</ProfileText>
@@ -21,16 +21,16 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
 
       <ProfileStats>
         <ProfileStatsBlock>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
+          <span>Followers</span>
+          <span>{stats.followers}</span>
         </ProfileStatsBlock>
         <ProfileStatsBlock>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
+          <span>Views</span>
+          <span>{stats.views}</span>
         </ProfileStatsBlock>
         <ProfileStatsBlock>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
+          <span>Likes</span>
+          <span>{stats.likes}</span>
         </ProfileStatsBlock>
       </ProfileStats>
     </UserProfile>

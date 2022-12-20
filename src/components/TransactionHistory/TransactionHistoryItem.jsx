@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 import { TableItemTr, TableItemTd } from './TransactionHistoryItem.styled';
 
-export const TransactionHistoryItem = ({ id, type, amount, currency }) => {
+export const TransactionHistoryItem = ({ type, amount, currency }) => {
   return (
-    <TableItemTr key={id}>
+    <TableItemTr>
       <TableItemTd>{type}</TableItemTd>
       <TableItemTd>{amount}</TableItemTd>
       <TableItemTd>{currency}</TableItemTd>
@@ -13,5 +13,7 @@ export const TransactionHistoryItem = ({ id, type, amount, currency }) => {
 };
 
 TransactionHistoryItem.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object),
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
 };

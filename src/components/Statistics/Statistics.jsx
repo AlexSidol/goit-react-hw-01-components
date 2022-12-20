@@ -8,12 +8,6 @@ import {
   StatisticsText,
 } from './Statistics.styled';
 
-const randomColor = () => {
-  return (
-    '#' + (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase()
-  );
-};
-
 export const Statistics = ({ title, stats }) => {
   return (
     <UserStatisticsBlock>
@@ -23,7 +17,7 @@ export const Statistics = ({ title, stats }) => {
           return (
             <UserStatisticsItem
               key={id}
-              style={{ backgroundColor: randomColor() }}
+              // style={{ backgroundColor: randomColor() }}-перенесла в стилі
             >
               <StatisticsText>{label}</StatisticsText>
               <StatisticsText>{percentage}%</StatisticsText>
@@ -42,6 +36,6 @@ Statistics.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
-    })
+    }).isRequired
   ).isRequired,
 };

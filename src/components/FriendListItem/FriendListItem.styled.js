@@ -12,7 +12,7 @@ export const FriendStatus = styled.span`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: red;
+  background-color: ${({ isOnline }) => (isOnline ? 'green' : 'red')};
   gap: 20px;
   align-items: center;
   font-size: ${({ theme }) => theme.spacing(6)};

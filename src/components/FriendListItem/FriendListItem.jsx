@@ -2,18 +2,17 @@ import PropTypes from 'prop-types';
 import { UserFriendListItem, FriendStatus } from './FriendListItem.styled';
 
 export const FriendListItem = ({ avatar, name, isOnline }) => {
-  const backgroundColor = isOnline ? 'green' : 'red';
   return (
     <UserFriendListItem>
-      <FriendStatus style={{ backgroundColor: backgroundColor }}>
-        {isOnline}
-      </FriendStatus>
-      <img className="avatar" src={avatar} alt="User avatar" width="48" />
-      <p className="name">{name}</p>
+      <FriendStatus isOnline={isOnline}>{isOnline}</FriendStatus>
+      <img src={avatar} alt="User avatar" width="48" />
+      <p>{name}</p>
     </UserFriendListItem>
   );
 };
 
 FriendListItem.propTypes = {
-  friends: PropTypes.arrayOf(PropTypes.array),
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
